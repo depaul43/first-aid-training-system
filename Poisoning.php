@@ -22,41 +22,54 @@
     <div class="all fade-in">
         <div class="contents">
 
-            <div class="main">
-                <div class="main_1">
-                    <div class="img_div">
+            <div class="col-md-12">
+                <div class="card">
+                <div class="img-container text-center">
                         <img src="images/30206.jpg" alt="poisoning"/>
                     </div>
-                    <h3>POISONING:</h3>
-                    <p>
-                        People, especially children, poison themselves by eating or drinking wrong things or by taking 
+                    <div class="card-header">
+                    <h3 class=" def-heading text-center " > POISONING:</h3>
+                    </div>
+                    <div class="card-body">
+                    <p><strong style="font-size: x-large;">.</strong>&nbsp;&nbsp; People, especially children, poison themselves by eating or drinking wrong things or by taking 
                         too much medicine or tablets.
                     </p>
+                    </div>
                 </div>
-                <div class="main_2">
-                    <div class="img_div">
+                <div class="col-md-12">
+                    <div class="card">
+                <div class="img-container text-center">
                         <img src="images/47428.jpg" alt="vomitting"/>
                     </div>
-                    <h3> Acids in batteries:<br/> Caustic soda:</h3>
-                    <p>
-                        Make the person vomit by putting your finger in their throat or by making them drink water with salt.</p>
+                    <div class="card-header">
+                    <h3 class="def-heading text-center"> Acids in batteries:<br/> Caustic soda:</h3>
+                    </div>
+                    <p><strong style="font-size: x-large;">.</strong> the person vomit by putting your finger in their throat or by making them drink water with salt.</p>
                      <p><b> Take them him/her to nearest health centre immediately.</b></p>
             
                 </div>
-                <div class="main_3">
-                    <div class="img_div">
+                <div class="row-my-3">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="img-container text-center">
                         <img src="images/32753.jpg" alt="milk"/>
                     </div>
                     <br>
-                    <p>Watch the following video clip on how to react in case of poisoning</p>
+                    <div class="card">
+                    <div class="img-container text-center"> Watch the following video clip on how to react in case of poisoning</p>
                     <iframe width="670" height="115" src="https://www.youtube.com/embed/L4o6D10AkMg" frameborder="0" allowfullscreen></iframe>
-
-                    <h3> Kerosene or petrol:</h3>
+                    </div>
+                    <div class="card-header">
+                    <h3 class="def-heading text-center"> Kerosene or petrol:</h3>
+                    </div>
+                    <div class="card-body">
                     <p>Do not make the person vomit.</p>
                     <p>Give the person milk or water to drink in order <i>to dilute the poison in the stomach.</i></p>
-                    <p><b> Take to the health centre immediately.</b></p>           
+                    <p><b> Take to the health centre immediately.</b></p> 
+                    </div>         
                 </div>
             </div>
+                </div>
             <div class="categories">
                 <div class="inhaled">
                     <div>
@@ -99,10 +112,9 @@
   <div class="container">
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on how to react in case of poisoning:</p>
-    <button class="btn btn-primary">Start Quiz</button>
-  </div>
-  <br>
-  <a href="index.php" class="btn btn-primary">Return to home page</a> <br><br>
+    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+                <br>
+                <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
 </section>
 
             <footer>

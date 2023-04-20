@@ -58,3 +58,8 @@ button[type=submit]:hover {
 .footer p {
     margin: 0;
 }
+
+img {
+    max-width: 30%;
+    max-height: 30%;
+}

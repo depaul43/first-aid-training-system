@@ -24,16 +24,17 @@
 </style>
 </head>
 <body>
-    <div class="header">
-      <br>
-        <h2>Drowning</h2>
+    <div class=" card-header">
+        <h2 class ="def-heading text-center">Drowning</h2>
         <div class="img_div drowning">
             <img src="images/Drowning_4.jpg"/>
+        </div>
         </div>
         <p>If someone is in difficulty in water, <b>do not</b> enter the water unless it's safe to do so. Don't put yourself at risk.</p>
         <p>Once the person is on land, you need to check if they're breathing.</p>
         <p>Ask someone or call for medical help.</p>
 
+        <div class="card-body">
         <div class="steps">
             <div class="img_steps">
                 <img src="images/5236.jpg" alt="Get Help"/>
@@ -42,7 +43,10 @@
                 <img src="images/checking_pulse.jpg" alt="Checking pulse"/>
                 <img src="images/cpr.jpg" alt="CPR"/>
             </div>
+        </div>
+        </div>
             <br><br>
+            <div class="card-body"
             <div class="text">
                     <p class="top"><b>1. Get Help</b></p>
                     <p>
@@ -66,7 +70,7 @@
                     <img src="images/checking_pulse.jpg" alt="Checking pulse"/>
 
                     <p class="top">If There is No Pulse, click <a href="cpr.php"> here</a> to see how to perform CPR<br/>
-
+                    
             </div>
         </div>
         <p class="note"><b>IF YOU DO NOT KNOW HOW TO SWIM, DO NOT JUMP INTO THE WATER IMMEDIATELY CALL FOR HELP</b></p>
@@ -84,11 +88,9 @@
   <div class="container">
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on how to save a drowning person:</p>
-    <button class="btn btn-primary">Start Quiz</button>
-  </div>
-  <br>
-  <a href="index.php" class="btn btn-primary">Return to home page</a> <br><br>
-</section>
+    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+                <br>
+                <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
 
 <footer>
       <div class="container-fluid bg-dark text-light py-3">

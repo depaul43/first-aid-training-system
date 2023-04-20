@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>First Aid Training</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
   </head>
   <body>
     <div class="header">
@@ -74,10 +74,9 @@
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on how to react in case of poisoning:</p>
     <div class="d-flex flex-column align-items-center">
-      <button class="btn btn-primary">Start Quiz</button>
-      <a href="index.php" class="btn btn-primary mt-3">Return to home page</a>
-    </div>
-  </div>
+    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+      <br>
+      <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
 </section>
 <br>
 

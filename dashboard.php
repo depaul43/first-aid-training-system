@@ -69,8 +69,12 @@ $admno = $_SESSION['regno'];
 
 <body>
 <a href="logout.php" class="logout">Logout</a>
-<h1>Maseno University First Aid Training System <?php echo $_SESSION['fname']; ?></h1>
-    <div class="card">
+Welcome <?php echo $_SESSION['fname']; ?>
+<p>This is the Maseno First Aid Training System. Here, you will learning about different medical emergencies and how to respond in each situation.</p>
+<div class="card-header">
+<h2 class="def-heading" style="text-align:center; color:#1e90ff;">LEARN A SKILL, SAVE LIVES.</h2>
+</div>
+<div class="card">
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
@@ -137,7 +141,7 @@ $admno = $_SESSION['regno'];
                     <div class="card-body">
                         <h5 class="card-title"> ACCIDENT</h5>
                         <p class="card-text">Training Module</p>
-                        <a href="cpr.php" class="btn btn-primary">View Module</a>
+                        <a href="Accident.php" class="btn btn-primary">View Module</a>
                     </div>
                 </div>
             </div>
@@ -147,7 +151,7 @@ $admno = $_SESSION['regno'];
                     <div class="card-body">
                         <h5 class="card-title">BURNS</h5>
                         <p class="card-text">Training Module</p>
-                        <a href="cpr.php" class="btn btn-primary">View Module</a>
+                        <a href="burns.php" class="btn btn-primary">View Module</a>
                     </div>
                 </div>
             </div>
@@ -157,10 +161,30 @@ $admno = $_SESSION['regno'];
                     <div class="card-body">
                         <h5 class="card-title">OTHERS</h5>
                         <p class="card-text">Training Module</p>
-                        <a href="cpr.php" class="btn btn-primary">View Module</a>
+                        <a href="others.php" class="btn btn-primary">View Module</a>
                     </div>
                 </div>
             </div>
+            <br>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+  <div class="card" style="margin-right: 20px;">
+    <div class="card-body">
+      <a href="complaints.php" class="btn btn-primary" style="background-color: none;">Complaints</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <a href="ContactUs.php" class="btn btn-primary" style="background-color: none;">Contact</a>
+    </div>
+  </div>
+  &nbsp; &nbsp;
+  <div class="card">
+    <div class="card-body">
+      <a href="access-modules.php" class="btn btn-primary" style="background-color: none;"> Module Resources</a>
+    </div>
+  </div>
+</div>
             <footer>
       <div class="container-fluid bg-dark text-light py-3">
         <div class="row">

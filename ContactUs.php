@@ -22,7 +22,7 @@
         <img src="images/animation.svg" alt="loader"/>
     </div>
     <div class="contact_us">
-        <a href="Accidents.php" class="back"><i class="fa fa-arrow-left"></i>Back</a>
+        <a href="dashboard.php" class="back"><i class="fa fa-arrow-left"></i>Back</a>
         <div class="image">
             <img src="images/contact-1.png"/>
         </div>
@@ -43,15 +43,6 @@
             </card>
         </div>
     </div>
-    <script>
-        const loaded=document.getElementById('loader')
-        const contact_us=document.querySelector('.contact_us')
-        setTimeout(() => {
-            loaded.style.display='none';
-            contact_us.style.display='flex'
-        }, 3000);
-    </script>
-    <script src="js/index.js"></script>
 </body>
 </html>
 </body>

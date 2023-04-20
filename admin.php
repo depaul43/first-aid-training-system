@@ -59,26 +59,26 @@
     </style>
   </head>
   <body>
-    <h1>Admin Dashboard</h1>
-    <a href="adminlogin.php" class="logout">Logout</a>
-    <div class="card">
-      <a href="add-study-modules.php">Add Study Modules</a>
-    </div>
-    <div class="card">
-      <a href="a Quiz</a>dd-timed-quiz.php">Add Timed Quizzes
-    </div>
-    <div class="card">
-      <a href="view-complaints.php">View Complaints</a>
-    </div>
-    <div class="card">
-      <a href="view-emergency-requests.php">View Emergency Requests</a>
-    </div>
-    <div class="card">
-      <a href="view-orders.php">View Location</a>
-    </div>
-    
-    <section>
-    <div class="footer">&copy; 2023 First Aid Training System</div>
-    </section>
-  </body>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <a href="adminlogin.php" class="logout">Logout</a>
+  <div class="card">
+    <a href="study-modules.php">Add Study Modules</a>
+  </div>
+  <div class="card">
+    <a href="add-quiz.php">Add Quizzes</a>
+  </div>
+  <div class="card">
+    <a href="view-complaints.php">View Complaints</a>
+  </div>
+  
+  <section>
+  <div class="footer">&copy; 2023 First Aid Training System</div>
+  </section>
+</body>
 </html>

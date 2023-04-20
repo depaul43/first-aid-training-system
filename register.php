@@ -109,7 +109,7 @@
         <br><br>
 
         <input type="submit" name="register" value="Register">
-        <p>Already have an account? <a href="login.php"> Login </a></p>
+        <p>Already have an account? <a href="index.php"> Login </a></p>
     </form>
 </table>
 </body>

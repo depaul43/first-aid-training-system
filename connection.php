@@ -110,7 +110,7 @@ if (isset($_POST['register'])) {
          array_push($errors, "user already exists");
         }
     }
-    // Finally, register admin if there are no errors in the form
+    // Finally, register if there are no errors in the form
     if (count($errors) == 0) {
         $encrypted_pass = md5($password);
         $user_register_query = "INSERT INTO `usertable`(`RegNum`, `FirstName`, `MiddleName`, `LastName`, `Email`, `ConfirmPassword`, `Gender`)
@@ -125,8 +125,6 @@ if (isset($_POST['register'])) {
     }
     }
 }
-
-
 
 ob_end_flush();
 ?>

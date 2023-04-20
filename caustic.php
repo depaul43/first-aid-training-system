@@ -4,21 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>First Aid Training</title>
-    <link rel="stylesheet" href="css/cpr.css" />
-    <link href="style/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="style/style.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="header">
-    </div>
-    <div id="loader">
-      <img src="images/animation.svg" alt="loader" />
-    </div>
     <div class="container caustic_page fade-in">
-      <a href="Accidents.php"
-        ><i class="fa fa-arrow-left"></i>Accidents and Emergencies</a
-      >
+      <a href="dashboard.php"></a>
         <div class="main">
             <div class="definition">
                 <h2 class="def-heading">Caustic Soda Ingestion:</h2>
@@ -42,18 +35,21 @@
                 Arrangements should be made for urgent esophagogastroduodenoscopy (EGD) to grade the degree of injury and establish long-term prognosis, In asymptomatic patients, however, EGD may be withheld in favor of observation. Pediatric patients who remain asymptomatic for several hours (2 - 4 hours) after an exploratory ingestion and who are tolerating a normal diet may be discharged with appropriate follow-up and return precautions
                </p>
 
-               <p class="def">Take them to the health centre immediately or <a href="tel:+19145956140">call emergency at +19145956140</a></p>
-
+               <p class="def">Take them to the health centre immediately or <a href="tel:+25476388439"> +25476388439</a> call emergency.</a></p>
+               <br><br>
+               <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
               </div>
           </div>
         </div>
     </div>
+    <footer>
+      <div class="container-fluid bg-dark text-light py-3">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2023 First Aid Training System
+            </div>
+        </div>
+    </div>
   </body>
-  <script>
-    const loaded=document.getElementById('loader')
-    const electric_contents=document.querySelector('.caustic_page')
-    setTimeout(() => {
-        loaded.style.display='none';
-    }, 3000);
-</script>
+
 </html>
