@@ -15,7 +15,6 @@ if (!$conn) {
 
 // Initialize quiz variables
 $quiz_id = 1; // Change this to match the desired quiz ID
-$module_id = 1; // Change this to match the desired module ID
 
 // Create an array of 10 MCQs
 $quiz_questions = array(
@@ -50,8 +49,8 @@ for ($i = 0; $i < 10; $i++) {
   $quiz_question = $quiz_questions[$i];
   $quiz_answer = $quiz_answers[$i];
 
-  $sql = "INSERT INTO quiz (quiz_id, module_id, quiz_question, quiz_answer)
-  VALUES ('$quiz_id', '$module_id', '$quiz_question', '$quiz_answer')";
+  $sql = "INSERT INTO quiz (quiz_id, quiz_question, quiz_answer)
+  VALUES ('$quiz_id', '$quiz_question', '$quiz_answer')";
 
   if (mysqli_query($conn, $sql)) {
     echo "MCQ created successfully";

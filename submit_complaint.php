@@ -12,16 +12,14 @@ if (!$conn) {
 }
 
 // Get form data
-$complaint_id = $_POST['complaint_id'];
-$user_id = $_POST['user_id'];
 $complaint_name = $_POST['complaint_name'];
 $complaint_type = $_POST['complaint_type'];
 $complaint_description = $_POST['complaint_description'];
 $date_created = $_POST['date_created'];
 
 // Insert data into database
-$sql = "INSERT INTO complaints (complaint_id, user_id, complaint_name, complaint_type, complaint_description, date_created) 
-VALUES ('$complaint_id', '$user_id', '$complaint_name', '$complaint_type', '$complaint_description', '$date_created')";
+$sql = "INSERT INTO complaints (complaint_name, complaint_type, complaint_description, date_created) 
+VALUES ('$complaint_name', '$complaint_type', '$complaint_description', '$date_created')";
 
 if (mysqli_query($conn, $sql)) {
   // Add success notification popup and redirect

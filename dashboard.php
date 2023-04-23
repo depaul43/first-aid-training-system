@@ -39,9 +39,16 @@ $admno = $_SESSION['regno'];
         .card {
             margin-bottom: 20px;
         }
-              .logout {
+
+        .logout {
         float: right;
         margin-right: 10px;
+        font-size: 1.2rem;
+        color: #fff;
+        text-decoration: none;
+        background-color: #333;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
         
       }
 
@@ -185,6 +192,10 @@ Welcome <?php echo $_SESSION['fname']; ?>
     </div>
   </div>
 </div>
+
+<section>
+<h2 class="def-heading text-center"><i>Try our first aid bot 👉 <a href="chat.php">here.</i></a></h2>
+</section>
             <footer>
       <div class="container-fluid bg-dark text-light py-3">
         <div class="row">

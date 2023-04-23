@@ -4,25 +4,44 @@
     <title>Admin Dashboard</title>
     
     <style>
+          body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(images/admin.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
       .card {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0px 2px 2px #ccc;
-        display: inline-block;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        width: 200px;
+      margin: 1rem;
+      padding: 1rem;
+      background-color: #f7f7f7;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       }
       
       .card a {
         color: #333;
+        font-size: 1.2rem;
         text-decoration: none;
+        transition: color 0.3s ease-in-out;
       }
+      
+         .card a:hover {
+          color: #666;
+          }
       
       .logout {
         float: right;
         margin-right: 10px;
+        font-size: 1.2rem;
+        color: #fff;
+        text-decoration: none;
+        background-color: #333;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
         
       }
 
@@ -56,6 +75,22 @@
         left: 0;
         right: 0;
       }
+      /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+
     </style>
   </head>
   <body>
@@ -66,16 +101,24 @@
 </head>
 <body>
   <h1>Admin Dashboard</h1>
+  <div class="navbar">
   <a href="adminlogin.php" class="logout">Logout</a>
+</div>
+
+<div class="card-container">
   <div class="card">
     <a href="study-modules.php">Add Study Modules</a>
   </div>
+  
   <div class="card">
     <a href="add-quiz.php">Add Quizzes</a>
   </div>
+  
   <div class="card">
     <a href="view-complaints.php">View Complaints</a>
   </div>
+</div>
+
   
   <section>
   <div class="footer">&copy; 2023 First Aid Training System</div>
