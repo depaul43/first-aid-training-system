@@ -3,7 +3,7 @@
                 $host = "localhost";
                 $username = "root";
                 $password = "";
-                $dbname = "fts";
+                $dbname = "first";
 
                 $conn = mysqli_connect($host, $username, $password, $dbname);
 
@@ -20,12 +20,9 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>" . $row["complaint_id"] . "</td>";
-                        echo "<td>" . $row["user_id"] . "</td>";
-                        echo "<td>" . $row["complaint_name"] . "</td>";
                         echo "<td>" . $row["complaint_type"] . "</td>";
                         echo "<td>" . $row["complaint_description"] . "</td>";
-                        echo "<td>" . $row["complaint_namr"] . "</td>";
-                        echo "<td>" . $row["date_created"] . "</td>";
+                        echo "<td>" . $row["complaint_date"] . "</td>";
                         echo "</tr>";
                     }
                 } else {

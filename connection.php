@@ -4,7 +4,7 @@ session_start();
 
 // connect to the database
 try {
-  $conn = mysqli_connect('localhost', 'root', '', 'fts');
+  $conn = mysqli_connect('localhost', 'root', '', 'first');
   if (!$conn) {
     die('Could not connect: ' . mysqli_connect_error());
 }

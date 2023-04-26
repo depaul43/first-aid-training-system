@@ -4,7 +4,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$dbname = 'fts';
+$dbname = 'first';
 
 $mysqli = new mysqli($host, $user, $password, $dbname);
 if ($mysqli->connect_error) {
@@ -15,7 +15,6 @@ if ($mysqli->connect_error) {
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Get form data
-  $module_id = $_POST['module_id'];
   $module_name = $_POST['module_name'];
   $module_description=$_POST['module_description'];
   $module_file=$_POST['module_file'];
@@ -39,10 +38,6 @@ if ($_FILES['module_file']['error'] === UPLOAD_ERR_OK) {
 }
 
   // Validate form data
-  $errors = [];
-  if (empty($module_id)) {
-    $errors[] = 'Module id is required.';
-  }
   if (empty($module_name)) {
     $errors[] = 'Module name is required.';
   }
@@ -55,9 +50,9 @@ if ($_FILES['module_file']['error'] === UPLOAD_ERR_OK) {
 
   // Insert data into database if no errors
   if (empty($errors)) {
-    $stmt = $mysqli->prepare("INSERT INTO modules (module_id, module_name, module_description, module_file) 
-    VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $module_id, $module_name, $module_description, $module_file);
+    $stmt = $mysqli->prepare("INSERT INTO modules (module_name, module_description, module_file) 
+    VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $module_name, $module_description, $module_file);
     $stmt->execute();
     $stmt->close();
 
@@ -137,9 +132,6 @@ if ($_FILES['module_file']['error'] === UPLOAD_ERR_OK) {
   <?php } ?>
 
   <form method="POST" enctype="multipart/form-data">
-  <label for="module_id">Module ID:</label>
-  <input type="text" id="module_id" name="module_id" required>
-  <br><br>
   <label for="module_name">Module Name:</label>
   <input type="text" id="module_name" name="module_name" required>
   <br><br>

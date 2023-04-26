@@ -1,78 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>First Aid Chatbot</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f4f4f4;
-		}
-        header {
-		background-color: #333;
-		color: #fff;
-		padding: 15px;
-		text-align: center;
-	}
 
-	h1 {
-		margin: 0;
-	}
-
-	main {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 20px;
-	}
-
-	label {
-		display: block;
-		font-weight: bold;
-		margin-bottom: 5px;
-	}
-
-	input[type="text"] {
-		padding: 10px;
-		font-size: 16px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		width: 100%;
-		box-sizing: border-box;
-		margin-bottom: 10px;
-	}
-
-	button[type="submit"] {
-		background-color: #333;
-		color: #fff;
-		padding: 10px 20px;
-		font-size: 16px;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	}
-
-	button[type="submit"]:hover {
-		background-color: #555;
-	}
-
-	.response {
-		margin-top: 20px;
-		padding: 10px;
-		background-color: #fff;
-		border: 1px solid #ccc;
-		border-radius: 40px;
-	}
-    .response-container {
-        margin-top: 50px;
-        text-align: center;
-    }
-</style>
-</head>
-</html>
-<div style="text-align: center;">
-<div class="response-container">
 <?php
 $questions = array(
     "What should I do if someone is choking?",
@@ -100,7 +26,7 @@ $questions = array(
     "What should I do if someone is experiencing an allergic reaction?",
     "What should I do if someone is having a panic attack?",
     "What should I do if someone has a foreign object in their eye?",
-    "How do I perform CPR on an infant or child?"
+    "How do I perform CPR on an infant or child?",
 );
 
 
@@ -206,9 +132,7 @@ if(isset($_POST['submit'])) {
     if (count($matched_keywords) > 0) {
         $response = "I'm sorry, I didn't understand your question about " . implode(", ", $matched_keywords) . ". Please try asking a different question.";
     } else {
-        $response = "I'm sorry, I didn't understand your question. Please try again.";
+        $response = "I'm sorry, I didn't understand your question. Please try a first aid keyword(s).";
     }
 }
 ?>
-</div>
-</div>

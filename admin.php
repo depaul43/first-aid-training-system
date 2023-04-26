@@ -111,10 +111,6 @@
   </div>
   
   <div class="card">
-    <a href="add-quiz.php">Add Quizzes</a>
-  </div>
-  
-  <div class="card">
     <a href="view-complaints.php">View Complaints</a>
   </div>
 </div>

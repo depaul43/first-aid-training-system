@@ -36,8 +36,6 @@
 </style>
 
 <form method="post" action="submit_complaint.php">
-  <label for="complaint_name">Complaint Name:</label>
-  <input type="text" id="complaint_name" name="complaint_name" required>
 <label for="complaint_type">Complaint Type:</label>
 <select id="complaint_type" name="complaint_type">
 <option value="Technical issues">Technical issues</option>
