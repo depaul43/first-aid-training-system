@@ -80,7 +80,7 @@
         </div>
         <form id="chat-form" method="post">
             <div class="chat-input">
-                <input type="text" id="message" name="message" placeholder="Type a keyword" required autofocus>
+                <input type="text" id="message" name="message" required autofocus>
                 <button type="submit">Send</button>
             </div>
         </form>

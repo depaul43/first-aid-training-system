@@ -74,7 +74,7 @@
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on burns:</p>
     <div class="d-flex flex-column align-items-center">
-    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+    <button class="btn btn-primary"><a href="QUIZ/quiz7/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
       <br>
       <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
   </div>

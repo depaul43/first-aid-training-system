@@ -107,12 +107,16 @@
                 </div>
             </div>
             <br><br>
+            <div id="loader">
+        <img src="images/animation.svg" alt="loader"/>
+    </div>
+    <div class="contents_drown fade-in">
 
             <section class="quiz">
   <div class="container">
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on how to react in case of poisoning:</p>
-    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+    <button class="btn btn-primary"><a href="QUIZ/quiz1/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
                 <br>
                 <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
 </section>

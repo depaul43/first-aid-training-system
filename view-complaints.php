@@ -15,11 +15,11 @@ die('Connect Error (' . $mysqli->connect_errno . ') '
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Get form data
 $complaint_id = $_POST['complaint_id'];
-$response = $_POST['response'];
+$response_text = $_POST['response_text'];
 
 // Insert response into database
-$stmt = $mysqli->prepare("INSERT INTO response (complaint_id, response) VALUES (?, ?)");
-$stmt->bind_param("is", $complaint_id, $response);
+$stmt = $mysqli->prepare("INSERT INTO response (complaint_id, response_text) VALUES (?, ?)");
+$stmt->bind_param("is", $complaint_id, $response_text);
 $stmt->execute();
 $stmt->close();
 }
@@ -35,9 +35,9 @@ $result->close();
 <head>
 <title>View Complaints</title>
 <style>
-table {
-border-collapse: collapse;
-width: 100%;
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 th, td {
@@ -100,7 +100,7 @@ background-color: #45a049;
 <th>Complaint Type</th>
 <th>Complaint Description</th>
 <th>Complaint Date</th>
-<th>Response </th>
+<th>Response Text </th>
 </tr>
 </thead>
 <tbody>
@@ -111,20 +111,30 @@ background-color: #45a049;
 <td><?php echo $complaint['complaint_description']; ?></td>
 <td><?php echo $complaint['complaint_date']; ?></td>
 <td>
-<?php if (!empty($complaint['response'])) { ?>
-<?php echo $complaint['response']; ?>
+<?php if (!empty($complaint['response_text'])) { ?>
+<?php echo $complaint['response_text']; ?>
 <?php } else { ?>
-<form class="response-form" method="POST" action="respond.php">
-<input type="hidden" name="complaint_id" value="<?php echo $complaint['complaint_id']; ?>">
-<select name="response_type" required>
-<option value="" selected disabled>Select response type</option>
-<option value="Please check your Internet connection">Please check your Internet connection</option>
-<option value="Please refresh your page to load the module again">Please refresh your page to load the module again</option>
-<option value="New modules will be updated in due course">New modules will be updated in due course</option>
-<option value="Check on the contact tab to get in touch with us">Check on the contact tab to get in touch with us</option>
-</select>
-<button type="submit">Respond</button>
+    <form class="response-form" method="POST" action="respond.php" onsubmit="return submitResponse(this)">
+    <input type="hidden" name="complaint_id" value="<?php echo $complaint['complaint_id']; ?>">
+    <textarea name="response" id="response" rows="1" cols="50" required <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>><?php if(isset($complaint['response_text'])) {echo 'Responded';} ?></textarea>
+    <button type="submit" onclick="document.getElementsByName('response_type')[0].options[1].text = 'Responded';" <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>>Respond</button>
 </form>
+
+<script>
+function submitResponse(form) {
+    // Submit the form via AJAX to respond.php
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // If the response was successful, hide the row containing the complaint
+            form.closest('tr').style.display = 'none';
+        }
+    }
+    xhr.open(form.method, form.action, true);
+    xhr.send(new FormData(form));
+    return false; // Prevent the form from submitting normally
+}
+</script>
 
 <?php } ?>
 </td>

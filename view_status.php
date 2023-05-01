@@ -11,6 +11,10 @@
         .container {
             margin-top: 50px;
         }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
 
         .table {
             background-color: #fff;
@@ -24,10 +28,8 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Complaint ID</th>
-                    <th>Complaint</th>
-                    <th>Date</th>
-                    <th>Response</th>
-                    <th>Action</th>
+                    <th>Complaint Description</th>
+                    <th>Complaint Type</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,15 +42,8 @@
                         die("Connection failed: " . mysqli_connect_error());
                     }
 
-                    // Delete complaint if delete button is clicked
-                    if (isset($_POST["delete"])) {
-                        $complaint_id = $_POST["delete"];
-                        $sql = "DELETE FROM complaints WHERE complaint_id=$complaint_id";
-                        mysqli_query($conn, $sql);
-                    }
-
                     // Fetch complaints from database
-                    $sql = "SELECT * FROM complaints";
+                    $sql = "SELECT complaint_id, complaint_description, complaint_type FROM complaints";
                     $result = mysqli_query($conn, $sql);
 
                     // Display complaints in table
@@ -56,16 +51,12 @@
                         while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
                             echo "<td>" . $row["complaint_id"] . "</td>";
+                            echo "<td>" . $row["complaint_description"] . "</td>";
                             echo "<td>" . $row["complaint_type"] . "</td>";
-                            echo "<td>" . $row["date_created"] . "</td>";
-                            echo "<td>" . $row["response"] . "</td>";
-                            echo '<td>
-                                    <form method="post">
-                                        <button type="submit" class="btn btn-danger" name="delete" value="' . $row["complaint_id"] . '">Delete</button>
-                                    </form>
-                                  </td>';
                             echo "</tr>";
                         }
+                    } else {
+                        echo "<tr><td colspan='3'>No complaints found.</td></tr>";
                     }
 
                     // Close database connection

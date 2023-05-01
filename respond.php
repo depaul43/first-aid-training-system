@@ -1,31 +1,38 @@
 <?php
-// Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "first";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+// Check if the form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the complaint ID and response text
+    $complaint_id = $_POST['complaint_id'];
+    $response_text = isset($_POST['response']) ? $_POST['response'] : "";
+    
+    // Get the current date and time
+    $response_date = date('Y-m-d H:i:s');
+    
+    // Connect to the database
+    $dsn = 'mysql:host=localhost;dbname=first';
+    $username = 'root';
+    $password = '';
+    $options = array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    );
+    
+    try {
+        $pdo = new PDO($dsn, $username, $password, $options);
+    } catch (PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage();
+        die();
+    }
+    
+    // Insert the response into the database
+    $stmt = $pdo->prepare('INSERT INTO response (complaint_id, response_text, response_date) 
+    VALUES (:complaint_id, :response_text, :response_date)');
+    $stmt->execute(array(
+        ':complaint_id' => $complaint_id,
+        ':response_text' => $response_text,
+        ':response_date' => $response_date
+    ));
+    
+    // Redirect back to the view complaints page
+    header('Location: view-complaints.php');
+    exit();
 }
-
-// Get form data
-$complaint_id = $_POST['complaint_id'];
-$complaint_type = $_POST['complaint_type'];
-$complaint_date = date('Y-m-d H:i:s');
-
-// Insert data into database
-$sql = "INSERT INTO response (complaint_id, complaint_type, complaint_description, complaint_date) 
-VALUES ('$complaint_type', '$complaint_date')";
-
-if (mysqli_query($conn, $sql)) {
-  // Add success notification popup and redirect
-  echo "<script>alert('Complaint submitted successfully!')</script>";
-  echo "<script>window.location = 'view-complaints.php'</script>";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-?>

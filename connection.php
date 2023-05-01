@@ -32,6 +32,8 @@ if (isset($_POST['login_btn'])) {
     $login_query = "SELECT * FROM `usertable` WHERE Email='$username' AND ConfirmPassword='$encrypted_password' ";
     $results = mysqli_query($conn, $login_query);
 
+    
+
     if (mysqli_num_rows($results) == 1) {
       $row = mysqli_fetch_assoc($results);
       //sessions

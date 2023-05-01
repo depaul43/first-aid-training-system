@@ -88,7 +88,7 @@
   <div class="container">
     <h2>Test Your Knowledge</h2>
     <p>Take this short quiz to test your knowledge on how to save a drowning person:</p>
-    <button class="btn btn-primary"><a href="QUIZ/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
+    <button class="btn btn-primary"><a href="QUIZ/quiz2/index.php" style="color: black; text-decoration: none;" >Start Quiz </a></button>
                 <br>
                 <a href="dashboard.php" class="home"><i class="fa fa-arrow-left"></i>Back</a>
 
