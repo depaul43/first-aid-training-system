@@ -92,7 +92,6 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-
   <form method="post">
     <label>Username:</label>
     <input type="text" name="username" required><br>

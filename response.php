@@ -1,6 +1,12 @@
 
 <?php
 $questions = array(
+    "How to attend to cat bite?",
+    "How to attend to dog bite?",
+    "What to do in case of stomachache?",
+    "What to do in case of toothache?",
+    "What to do in case of monkey bite?",
+    "What to do in case an objects into your ear?",
     "What should I do if someone is choking?",
     "How do I treat a burn?",
     "What should I do if someone is having a seizure?",
@@ -27,10 +33,18 @@ $questions = array(
     "What should I do if someone is having a panic attack?",
     "What should I do if someone has a foreign object in their eye?",
     "How do I perform CPR on an infant or child?",
+    "What to do in case of dizziness?",
+    "How to respond to blur vision?",
 );
 
 
 $answers = array(
+    "For cat bite, wash the wound thoroughly with soap and water. Apply an antibiotic ointment and cover with a sterile bandage. Seek medical attention if the wound becomes red, swollen, or painful. In some cases, a tetanus shot or rabies vaccine may be necessary.",
+    "For dog bite, wash the wound thoroughly with soap and water. Apply an antibiotic ointment and cover with a sterile bandage. Seek medical attention if the wound becomes red, swollen, or painful.",
+    "For stomachache, drink clear fluids and eat light foods like crackers or toast. Avoid spicy or greasy foods. Over-the-counter antacids or medications like Pepto-Bismol may help alleviate symptoms. Seek medical attention if symptoms persist for more than a few days or if there is severe pain or vomiting.",
+    "For toothache, rinse the mouth with warm saltwater. Use dental floss to remove any food particles between teeth. Apply a cold compress to the cheek near the affected area. Over-the-counter pain medications like ibuprofen or acetaminophen may help alleviate symptoms. Seek dental attention if the pain persists for more than a few days or is severe.",
+    "For monkey bite, wash the wound thoroughly with soap and water. Apply an antibiotic ointment and cover with a sterile bandage. Seek medical attention immediately as monkey bites may require a rabies vaccine or other treatment.",
+    "For foreign object(s) in the ear, do not try to remove the object with cotton swabs or other instruments, as this may push it further into the ear canal. Tilt the head to the affected side to try and dislodge the object. If this does not work, seek medical attention.",
     "If someone is choking, give them abdominal thrusts (Heimlich maneuver) until the object blocking their airway is dislodged.",
     "For minor burns, run cool water over the affected area for 10-15 minutes. For more serious burns, seek medical attention immediately.",
     "If someone is having a seizure, move any nearby objects away from them and make sure they are in a safe place. Do not restrain them, but do place a soft object (like a pillow) under their head.",
@@ -57,9 +71,21 @@ $answers = array(
     "If someone is having a panic attack, help them to breathe slowly and deeply, have them focus on a specific object, and encourage them to talk about their feelings.",
     "If someone has a foreign object in their eye, do not rub the eye. Instead, try to flush the object out with water, and if that doesn't work, cover the eye with a clean, dry patch or cloth and seek medical help.",
     "To perform CPR on an infant or child, use gentle compressions with only two fingers, give rescue breaths using a barrier device, and call for emergency medical help.",
+    "Sit or lie down immediately in a safe place, Keep your head still and avoid sudden movements, Close your eyes and breathe deeply and slowly for a few minutes.
+    If you're feeling faint, put your head down between your knees or lie down and lift your legs. Drink water or other fluids to stay hydrated and avoid bright lights and loud noises. Rest until you feel better.If your dizziness is severe or accompanied by other symptoms, seek medical attention.",
+    "Sit down and relax, Check glasses or contacts for proper fit and cleanliness,Flush the eye with clean water if there is any foreign material or debris. Take a break and rest eyes if the cause is from staring at a screen or reading for an extended period. Seek medical attention immediately if the blurred vision persists."
+
 );
 
 $keywords = array(
+    "ear",
+    "monkey",
+    "cat",
+    "dog",
+    "toothache",
+    "stomachache",
+    "blur",
+    "dizziness",
     "choke",
     "burn",
     "seizure",

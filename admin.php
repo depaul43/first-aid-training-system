@@ -89,8 +89,6 @@
   flex-wrap: wrap;
   margin-top: 2rem;
 }
-
-
     </style>
   </head>
   <body>
@@ -101,6 +99,16 @@
 </head>
 <body>
   <h1>Admin Dashboard</h1>
+  <?php
+session_start();
+
+// Check if the 'admin' session variable has been set
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+  // Redirect to the login page
+  header("Location: adminlogin.php");
+  exit();
+}
+?>
   <div class="navbar">
   <a href="adminlogin.php" class="logout">Logout</a>
 </div>

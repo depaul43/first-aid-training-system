@@ -104,42 +104,55 @@ background-color: #45a049;
 </tr>
 </thead>
 <tbody>
-<?php foreach ($complaints as $complaint) { ?>
-<tr>
-<td><?php echo $complaint['complaint_id']; ?></td>
-<td><?php echo $complaint['complaint_type']; ?></td>
-<td><?php echo $complaint['complaint_description']; ?></td>
-<td><?php echo $complaint['complaint_date']; ?></td>
-<td>
-<?php if (!empty($complaint['response_text'])) { ?>
-<?php echo $complaint['response_text']; ?>
+<?php if (empty($complaints)) { ?>
+    <tr>
+        <td colspan="6">No complaints found.</td>
+    </tr>
 <?php } else { ?>
-    <form class="response-form" method="POST" action="respond.php" onsubmit="return submitResponse(this)">
-    <input type="hidden" name="complaint_id" value="<?php echo $complaint['complaint_id']; ?>">
-    <textarea name="response" id="response" rows="1" cols="50" required <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>><?php if(isset($complaint['response_text'])) {echo 'Responded';} ?></textarea>
-    <button type="submit" onclick="document.getElementsByName('response_type')[0].options[1].text = 'Responded';" <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>>Respond</button>
-</form>
+    <?php foreach ($complaints as $complaint) { ?>
+        <tr>
+            <td><?php echo $complaint['complaint_id']; ?></td>
+            <td><?php echo $complaint['complaint_type']; ?></td>
+            <td><?php echo $complaint['complaint_description']; ?></td>
+            <td><?php echo $complaint['complaint_date']; ?></td>
+            <td>
+                <?php if (!empty($complaint['response_text'])) { ?>
+                    <?php echo $complaint['response_text']; ?>
+                <?php } else { ?>
+                    Not responded
+                <?php } ?>
+            </td>
+            <td>
+                <?php if (!empty($complaint['response_text'])) { ?>
+                    <button disabled>Respond</button>
+                <?php } else { ?>
+                    <form class="response-form" method="POST" action="respond.php" onsubmit="return submitResponse(this)">
+                        <input type="hidden" name="complaint_id" value="<?php echo $complaint['complaint_id']; ?>">
+                        <textarea name="response" id="response" rows="1" cols="50" required <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>><?php if(isset($complaint['response_text'])) {echo 'Responded';} ?></textarea>
+                        <button type="submit" onclick="document.getElementsByName('response_type')[0].options[1].text = 'Responded';" <?php if(isset($complaint['response_text'])) {echo 'disabled';} ?>>Respond</button>
+                    </form>
 
-<script>
-function submitResponse(form) {
-    // Submit the form via AJAX to respond.php
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            // If the response was successful, hide the row containing the complaint
-            form.closest('tr').style.display = 'none';
-        }
-    }
-    xhr.open(form.method, form.action, true);
-    xhr.send(new FormData(form));
-    return false; // Prevent the form from submitting normally
-}
-</script>
+                    <script>
+                        function submitResponse(form) {
+                            // Submit the form via AJAX to respond.php
+                            var xhr = new XMLHttpRequest();
+                            xhr.onreadystatechange = function() {
+                                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                                    // If the response was successful, hide the row containing the complaint
+                                    form.closest('tr').style.display = 'none';
+                                }
+                            }
+                            xhr.open(form.method, form.action, true);
+                            xhr.send(new FormData(form));
+                            return false; // Prevent the form from submitting normally
+                        }
+                    </script>
+                <?php } ?>
+            </td>
+        </tr>
+    <?php } ?>
+<?php } ?>
 
-<?php } ?>
-</td>
-</tr>
-<?php } ?>
 </tbody>
 </table>
 </div>

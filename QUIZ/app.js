@@ -1,5 +1,3 @@
-/* Quiz source: w3schools.com */
-
 var quiz = {
     "JS": [{
             "id": 1,
